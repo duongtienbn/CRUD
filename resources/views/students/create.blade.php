@@ -119,7 +119,12 @@ div
                             @enderror
                         </div>
                         <br>
-                        {{-- < action="{{ route('countries.destroy') }}" method="POST"> --}}
+                        <button type="button" id="addCountry" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            Launch static backdrop modal
+                        </button>
+
+                        @include('modal.modal')
+
                         <div class="form-group" style="position: relative;">
                             <label for="country">出身国</label><br>
                             <div class="form-group d-flex align-items-center">
@@ -139,6 +144,7 @@ div
                             <button type="button" id="addCountryButton" class="addCountry btn btn-primary">Add New
                                 Country</button>
                         </div>
+                        
                         <br>
                         <br>
                         <div class="form-control">
@@ -208,12 +214,6 @@ div
                                 <label for="sec_interv_staff">二次面接の対応者名</label>
                                 <select name="sec_interv_staff" id="sec_interv_staff"
                                     class="interv_staff form-control" style="width:80%">
-                                    {{-- <option value="" {{ old('sec_interv_staff') == '' ? 'selected' : '' }}
-                        style="text-align: center;"></option>
-                    <option value="西田" {{ old('sec_interv_staff') == '西田' ? 'selected' : '' }}
-                        style="text-align: center;">西田</option>
-                    <option value="新島" {{ old('sec_interv_staff') == '新島' ? 'selected' : '' }}
-                        style="text-align: center;">新島</option> --}}
                                 </select>
                                 @error('sec_interv_staff')
                                     <span
@@ -470,6 +470,7 @@ div
 
 
         </div>
+        
     </div>
     </div>
     </form>

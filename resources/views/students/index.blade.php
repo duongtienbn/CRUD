@@ -14,7 +14,7 @@
                 .background {
                     width: 100%;
                     height: 100vh;
-                    background: url('/images/background.jpg');
+                    /* background: url('/images/background.jpg'); */
                     /* background-size: cover; */
 
                 }
@@ -67,28 +67,6 @@
                                                 </option>
                                             </select>
                                         </div>
-                                        {{-- <div class="col-md-6">
-                                        <div id="search-input">
-                                            <label for="value" style="font-weight: bold">Value</label>
-                                            <input class="form-control" type="text" name="value" id="value"
-                                                placeholder="入力してください。">
-                                        </div>
-                                        <div id="search-select" style="display:none;">
-                                            <label for="value" style="font-weight: bold">スキル</label>
-                                            <div style="display: flex; align-items: center;">
-                                                <select name="skill_se[]" id="skill_se" multiple>
-                                                    @foreach ($skills as $skill)
-                                                        <option value="{{ $skill->name }}"
-                                                            {{ is_array($selectVal) && in_array($skill->name, $selectVal) ? 'selected' : '' }}>
-                                                            {{ $skill->name }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                                <button type="button" id="destroy" class="delCtr btn btn-danger btn-sm">追加</button>
-                                            </div>
-                                            
-                                        </div>
-                                    </div> --}}
                                         <div class="col-md-6">
                                             <div id="search-input">
                                                 <label for="value" style="font-weight: bold">Value</label>
@@ -110,7 +88,6 @@
                                                     </select>
                                                     <a href="{{ route('skill.create') }}"
                                                         class="btn btn-outline-secondary btn-sm">追加</a>
-                                                    {{-- <button type="button" id="destroy" class="btn btn-outline-secondary btn-sm">追加</button> --}}
                                                 </div>
                                             </div>
                                         </div>
@@ -134,9 +111,6 @@
                             <div class="">
                                 <a href="{{ route('student.create') }}" class="btn btn-outline-primary float-end  ">追加</a>
                             </div>
-                            {{-- <div class="col-md-6">
-                            <a href="{{ route('STUDENT.restore') }}" class="btn btn-primary float-end">Restore</a>
-                        </div> --}}
                         </div>
                     </div>
                 </div>
@@ -222,39 +196,6 @@
         new MultiSelectTag('skill_se');
     </script>
 
-    {{-- <script>
-        $(document).ready(function() {
-            // Ẩn input skill_se_info ban đầu
-            $('#skill_se_info').hide();
-
-            // Thêm sự kiện change cho dropdown type
-            $('#seachSkills').change(function() {
-                // Nếu giá trị được chọn là skill_se, hiển thị input skill_se_info và ẩn input value
-                if ($(this).val() === 'skill_se') {
-                    $('#skill_se_info').show();
-                    $('#searchInput').hide();
-                }
-                // Ngược lại, ẩn input skill_se_info và hiển thị input value
-                else {
-                    $('#skill_se_info').hide();
-                    $('#searchInput').show();
-                }
-            });
-            function a() {
-                var typeVal = $('#typeVal').val();
-                if (typeVal === 'skill_se') {
-                    $('#skill_se_info').show();
-                    $('#searchInput').hide();
-                }
-                // Ngược lại, ẩn input skill_se_info và hiển thị input value
-                else {
-                    $('#skill_se_info').hide();
-                    $('#searchInput').show();
-                }
-            }
-            a();
-        });
-    </script> --}}
 
     <script>
         $(document).ready(function() {
