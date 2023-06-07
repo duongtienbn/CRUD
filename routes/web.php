@@ -21,24 +21,24 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/login', function () {
-        return view('login.login');
-    });
+    return view('login.login');
+});
+
+Route::get('/testphp', function () {
+    return view('login.test');
+});
     
-    
-    
-    Route::resource('/student',StudentController::class); 
-    Route::resource('/skill', SkillController::class);
-    
-    Route::get('/restore', [studentController::class, 'restore'])->name('STUDENT.restore')->middleware('convert_spaces');
     
     Route::get('/', function () {
         return view('welcome');
         //return redirect(route('student.index'));
     });
+    Route::resource('/student',StudentController::class); 
+    Route::resource('/skill', SkillController::class);
     
-Route::get('/test', function () {
-    return view('login/test');
-});
+    Route::get('/restore', [studentController::class, 'restore'])->name('STUDENT.restore')->middleware('convert_spaces');
+    
+    
 Route::post('/getData',[StudentController::class, 'getData']);
 
 // Route::get('/testphp', function () {
@@ -60,3 +60,7 @@ Route::post('/newApply', [apply_department::class,'store_department']);
 
 Route::get('/getStaff', [staffController::class,'index']);
 Route::post('/newStaff', [staffController::class,'storeStaff']);
+
+Route::get('/breakpoint', function() {
+    return view('workport.index');
+});
